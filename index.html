@@ -6,14 +6,18 @@
 <title>Md Abu Baten — Machine learning researcher, Dhaka</title>
 <meta name="description" content="Md Abu Baten is a machine learning researcher from Dhaka with 7 published papers in computer vision, AutoML and applied ML.">
 <link rel="canonical" href="https://mrbaten.github.io/">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0a0a0a">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Md Abu Baten — Machine learning researcher">
 <meta property="og:description" content="7 published papers in computer vision, AutoML and applied ML. Based in Dhaka, Bangladesh.">
 <meta property="og:url" content="https://mrbaten.github.io/">
 <meta property="og:image" content="https://mrbaten.github.io/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="assets/fonts/brico.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" fetchpriority="high" type="image/avif"
       imagesrcset="assets/img/baten-400.avif 400w, assets/img/baten-720.avif 720w" imagesizes="(max-width: 760px) 200px, 290px">
@@ -179,6 +183,29 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0;border-top:1px solid var(--line)}
 .pubnote{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;color:var(--muted)}
 @media (max-width:640px){.pub{grid-template-columns:1fr;gap:.9rem}.thumb{max-width:280px}}
 
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.proj{position:relative;border-radius:24px;padding:1.7rem 1.6rem 1.5rem;background:var(--wash);display:flex;flex-direction:column;gap:.75rem;
+  transform:perspective(900px) rotateX(var(--px,0deg)) rotateY(var(--py,0deg));transition:transform .3s ease-out}
+.proj .when{font-size:.85rem;color:var(--muted)}
+.proj h3{font-size:1.3rem}
+.proj p{color:var(--muted)}
+.proj .chips li{font-size:.82rem;background:rgba(255,255,255,.6)}
+.proj .go{margin-top:auto;padding-top:.5rem;align-self:flex-start}
+.proj.feat{grid-column:span 2;background:var(--dark);color:#fff;display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem 2rem;align-items:start}
+.proj.feat .txt{display:flex;flex-direction:column;gap:.75rem}
+.proj.feat h3{font-size:clamp(1.6rem,1.2rem + 1.2vw,2.2rem)}
+.proj.feat p,.proj.feat .when{color:var(--on-dark-2)}
+.proj.feat .chips li{background:transparent;border-color:#33363a;color:#e6e8ea}
+.runs{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;transform-style:preserve-3d}
+.runs li{display:flex;align-items:center;gap:.7rem;padding:.7rem .9rem;border-radius:14px;background:#151617;border:1px solid #26292b;font-weight:550;transform:translateZ(calc(var(--d)*var(--on,0)))}
+.runs li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--hi);box-shadow:0 0 12px var(--hi);flex:none}
+.proj:hover{--on:1}
+.runs li{transition:transform .35s ease-out}
+.private{font-size:.85rem;color:var(--on-dark-2)}
+@media (max-width:900px){.projects{grid-template-columns:1fr 1fr}.proj.feat{grid-column:1/-1}}
+@media (max-width:640px){.projects{grid-template-columns:1fr}.proj.feat{grid-template-columns:1fr}}
+
 /* timeline */
 .tl{list-style:none;margin:0;padding:0}
 .tl>li{display:grid;grid-template-columns:11rem 1fr;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--line)}
@@ -234,10 +261,11 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0;border-top:1px solid var(--line)}
 <a class="skip" href="#main">Skip to content</a>
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="#main"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" style="fill:var(--pri)"/><text x="32" y="43" font-family="Arial,sans-serif" font-size="28" font-weight="700" text-anchor="middle" style="fill:var(--on-pri)">AB</text><circle cx="51" cy="13" r="5" style="fill:var(--signal)"/></svg>Md Abu Baten</a>
+    <a class="brand" href="#main"><svg aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#0a0a0a"/><path fill="#03fca9" d="M8.054545454545455 44.0 16.2 20.0H24.78181818181818L32.92727272727272 44.0H26.527272727272727L20.78181818181818 24.581818181818182H20.2L14.454545454545455 44.0ZM12.89090909090909 39.49090909090909V35.56363636363636H28.963636363636365V39.49090909090909ZM34.85454545454545 44.0V20.0H45.21818181818182Q47.47272727272727 20.0 49.272727272727266 20.381818181818183Q51.07272727272727 20.763636363636365 52.345454545454544 21.545454545454547Q53.61818181818182 22.327272727272728 54.29090909090909 23.545454545454547Q54.96363636363636 24.763636363636365 54.96363636363636 26.436363636363637Q54.96363636363636 27.854545454545455 54.36363636363636 28.90909090909091Q53.763636363636365 29.963636363636365 52.49090909090909 30.618181818181817Q51.21818181818182 31.272727272727273 49.10909090909091 31.490909090909092V32.10909090909091Q52.599999999999994 32.32727272727273 54.272727272727266 33.78181818181818Q55.94545454545454 35.236363636363635 55.94545454545454 37.70909090909091Q55.94545454545454 39.81818181818182 54.81818181818181 41.2Q53.69090909090909 42.58181818181818 51.50909090909091 43.29090909090909Q49.32727272727273 44.0 46.127272727272725 44.0ZM40.45454545454545 39.345454545454544H45.90909090909091Q48.127272727272725 39.345454545454544 49.18181818181818 38.709090909090904Q50.236363636363635 38.07272727272727 50.236363636363635 36.69090909090909Q50.236363636363635 35.163636363636364 48.96363636363636 34.400000000000006Q47.69090909090909 33.63636363636364 45.07272727272727 33.63636363636364H40.45454545454545ZM40.45454545454545 30.072727272727274H44.272727272727266Q46.85454545454545 30.072727272727274 48.05454545454545 29.363636363636367Q49.25454545454545 28.654545454545456 49.25454545454545 27.236363636363638Q49.25454545454545 25.854545454545455 48.14545454545454 25.21818181818182Q47.03636363636363 24.581818181818182 44.78181818181818 24.581818181818182H40.45454545454545Z"/></svg>Md Abu Baten</a>
     <nav class="nav" aria-label="Main">
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
@@ -388,6 +416,57 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0;border-top:1px solid var(--line)}
   </div>
 </section>
 
+<section id="projects" class="later">
+  <div class="wrap">
+    <div class="head">
+      <h2>Projects</h2>
+      <p>Systems I've built outside my papers, from a working AI assistant to recommendation and forecasting models.</p>
+    </div>
+    <div class="projects">
+      <article class="proj feat">
+        <div class="txt">
+          <p class="when">Oct 2026 – present · sole builder</p>
+          <h3>Simigo, an AI executive assistant</h3>
+          <p>An assistant for company MDs. It runs their email, calendar, tasks, reminders and meeting minutes from one web app. Business reports come from Excel and CSV uploads, with every figure computed in SQL and checked against the database.</p>
+          <ul class="chips"><li>Python</li><li>PostgreSQL</li><li>JavaScript</li><li>LLM APIs</li></ul>
+          <p class="private">Private code</p>
+        </div>
+        <ul class="runs" aria-label="What Simigo runs">
+          <li style="--d:18px">Email</li><li style="--d:30px">Calendar</li><li style="--d:42px">Tasks and reminders</li><li style="--d:54px">Meeting minutes</li><li style="--d:66px">Reports from Excel and CSV</li>
+        </ul>
+      </article>
+      <article class="proj">
+        <p class="when">Mar – Dec 2023</p>
+        <h3>Shadow recognition system</h3>
+        <p>A machine learning system that identifies the shadows of people and objects in images, built on the YOLOv3 object detection architecture.</p>
+        <ul class="chips"><li>Python</li><li>YOLOv3</li><li>Computer vision</li></ul>
+        <p class="when" style="margin-top:auto">Research project at Deep Lab</p>
+      </article>
+      <article class="proj">
+        <p class="when">2025</p>
+        <h3>Nexus, a product recommendation engine</h3>
+        <p>A hybrid recommender for online shops that mixes collaborative filtering with content-based filtering (TF-IDF and embeddings), and adjusts suggestions to what a shopper is doing in the current session.</p>
+        <ul class="chips"><li>FastAPI</li><li>PostgreSQL + pgvector</li><li>Redis</li><li>scikit-learn</li><li>Docker</li></ul>
+        <a class="link go" href="https://github.com/MrBaten/nexus-ai-recommender" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="fill:currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg> View code</a>
+      </article>
+      <article class="proj">
+        <p class="when">2025</p>
+        <h3>Customer deposit forecasting</h3>
+        <p>Predicts each customer's next-day deposit from 12 months of their history. Includes data preparation, exploratory analysis and feature engineering on synthetic data for 1,000 customers.</p>
+        <ul class="chips"><li>Python</li><li>Random Forest</li><li>XGBoost</li><li>LightGBM</li></ul>
+        <a class="link go" href="https://github.com/MrBaten/deposit-forecast-ml" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="fill:currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg> View code</a>
+      </article>
+      <article class="proj">
+        <p class="when">2023</p>
+        <h3>Image classification experiments</h3>
+        <p>Notebooks testing Inception v3 and EfficientNet-B1 with flipping and brightness augmentation, plus LSTM models on MNIST and MedMNIST.</p>
+        <ul class="chips"><li>TensorFlow</li><li>Inception v3</li><li>EfficientNet</li><li>LSTM</li></ul>
+        <a class="link go" href="https://github.com/MrBaten/AutoML" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="fill:currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg> View code</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="education" class="later">
   <div class="wrap">
     <div class="head">
@@ -425,20 +504,9 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0;border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="head">
       <h2>Experience</h2>
-      <p>Research first, then industry roles where I build AI systems and teach people to use them.</p>
+      <p>Research at Deep Lab, then industry work training people to use digital and AI tools.</p>
     </div>
     <ol class="tl">
-      <li>
-        <time>Oct 2026 – Present</time>
-        <div>
-          <h3>Simigo, an AI executive assistant</h3>
-          <p class="org">Project · sole builder · Python, PostgreSQL, JavaScript, LLM APIs</p>
-          <ul>
-            <li>An assistant for company MDs that runs email, calendar, tasks, reminders and meeting minutes from one web app.</li>
-            <li>Business reports from Excel and CSV uploads, with every figure computed in SQL and checked against the database.</li>
-          </ul>
-        </div>
-      </li>
       <li>
         <time>Sep 2025 – Jun 2026</time>
         <div>
@@ -459,14 +527,6 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0;border-top:1px solid var(--line)}
             <li>Co-authored 7 research papers on computer vision (YOLO, CNN) and AutoML, including new approaches to shadow detection and agricultural AI.</li>
             <li>Built and tuned models in Python, PyTorch and TensorFlow to test research ideas on real data.</li>
           </ul>
-        </div>
-      </li>
-      <li>
-        <time>Mar – Dec 2023</time>
-        <div>
-          <h3>Shadow recognition system</h3>
-          <p class="org">Research project · Python, YOLOv3</p>
-          <p>A machine learning system that identifies the shadows of people and objects.</p>
         </div>
       </li>
       <li>
@@ -556,7 +616,7 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0;border-top:1px solid var(--line)}
   run();
 
   // 3D tilt for interest tiles and publication thumbnails
-  if(!still&&fine)document.querySelectorAll('.tile,.pub').forEach(el=>{
+  if(!still&&fine)document.querySelectorAll('.tile,.pub,.proj').forEach(el=>{
     const t=el.classList.contains('pub')?el.querySelector('.thumb>*'):el,k=el.classList.contains('pub')?18:10;
     el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();
       t.style.setProperty('--py',((e.clientX-r.left)/r.width-.5)*k+'deg');t.style.setProperty('--px',-((e.clientY-r.top)/r.height-.5)*k+'deg')});
