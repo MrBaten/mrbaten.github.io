@@ -1,5 +1,5 @@
 // Service worker: assets cache-first, the page network-first with an offline fallback.
-const V='baten-v7';
+const V='baten-v8';
 const ASSETS=['./','index.html','favicon.svg','assets/fonts/brico.woff2','assets/img/baten-400.avif','assets/img/baten-720.avif','assets/img/baten-400.webp','assets/img/baten-720.webp','assets/img/fm-edges.webp'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
