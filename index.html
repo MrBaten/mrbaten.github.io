@@ -200,6 +200,9 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0;border-top:1px solid var(--line)}
 .proj.feat.wide{grid-column:1/-1}
 .proj.feat .link{background:var(--hi);color:var(--ink);border-color:var(--hi)}
 .proj.feat .link:hover{border-color:#fff}
+.golinks{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto;padding-top:.5rem}
+.proj.feat .link.alt{background:transparent;color:#fff;border-color:#33363a}
+.proj.feat .link.alt:hover{border-color:#fff}
 .runs{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;transform-style:preserve-3d}
 .runs li{display:flex;align-items:center;gap:.7rem;padding:.7rem .9rem;border-radius:14px;background:#151617;border:1px solid #26292b;font-weight:550;transform:translateZ(calc(var(--d)*var(--on,0)))}
 .runs li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--hi);box-shadow:0 0 12px var(--hi);flex:none}
@@ -470,9 +473,9 @@ section{padding:clamp(3.5rem,7vw,6.5rem) 0;border-top:1px solid var(--line)}
         <div class="txt">
           <p class="when">Nov 2026 · open source</p>
           <h3>MiniC, a C compiler written in C</h3>
-          <p>A compiler for a small subset of C, written in C11 with no dependencies and no parser generators. A hand-written lexer and recursive-descent parser build an abstract syntax tree, a semantic checker enforces scopes and types, and a code generator emits C that compiles without warnings under gcc and clang. Backed by 60 end-to-end tests and CI on Linux and macOS.</p>
+          <p>A compiler for a small subset of C, written in C11 with no dependencies and no parser generators. A hand-written lexer and recursive-descent parser build an abstract syntax tree, a semantic checker enforces scopes and types, and a code generator emits C that compiles without warnings under gcc and clang. It also runs in the browser: the same C sources compiled to WebAssembly power a live playground. Backed by 83 end-to-end tests and CI on Linux and macOS.</p>
           <ul class="chips"><li>C11</li><li>Compilers</li><li>Recursive descent</li><li>Make</li><li>GitHub Actions</li></ul>
-          <a class="link go" href="https://github.com/MrBaten/minic-compiler" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="fill:currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg> View code</a>
+          <div class="golinks"><a class="link" href="/minic/">&#9654; Try it live</a><a class="link alt" href="https://github.com/MrBaten/minic-compiler" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="fill:currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg> View code</a></div>
         </div>
         <ul class="runs" aria-label="MiniC compiler pipeline">
           <li style="--d:18px">Lexer</li><li style="--d:30px">Parser</li><li style="--d:42px">Abstract syntax tree</li><li style="--d:54px">Type checker</li><li style="--d:66px">C code generator</li>
